@@ -5,6 +5,12 @@ describe('Protractor Demo App', function() {
     var goButton = element(by.id('gobutton'));
     var latestResult = element(by.binding('latest'));
 
+    function add(a, b) {
+        firstNumber.sendKeys(a);
+        secondNumber.sendKeys(b);
+        goButton.click();
+    }
+
     beforeEach(function () {
         browser.get('http://juliemr.github.io/protractor-demo/');
     });
@@ -14,16 +20,12 @@ describe('Protractor Demo App', function() {
     });
 
     it('should add one and two', function() {
-        firstNumber.sendKeys(1);
-        secondNumber.sendKeys(2);
-        goButton.click();
+        add(1,2);
         expect(latestResult.getText()).toEqual('3');
     });
 
     it('should add four and six', function() {
-        firstNumber.sendKeys(4);
-        secondNumber.sendKeys(6);
-        goButton.click();
+        add(4, 6);
         expect(latestResult.getText()).toEqual('10');
     });
 
