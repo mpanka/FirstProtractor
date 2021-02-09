@@ -33,9 +33,8 @@ describe('Protractor Demo App', function() {
     it('should have a history', function() {
         add(1, 2);
         add(3, 4);
-        expect(history.count()).toEqual(2);
-        add(5, 6);
-        expect(history.count()).toEqual(3);
+        expect(history.last().getText()).toContain('1 + 2');
+        expect(history.first().getText()).toContain('3 + 4');
     });
 
     it('should read the value from an input', function() {
