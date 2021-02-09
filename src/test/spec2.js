@@ -5,8 +5,11 @@ describe('Protractor Demo App', function() {
     var goButton = element(by.id('gobutton'));
     var latestResult = element(by.binding('latest'));
 
-    it('should add one and two', function() {
+    beforeEach(function () {
         browser.get('http://juliemr.github.io/protractor-demo/');
+    });
+
+    it('should add one and two', function() {
         firstNumber.sendKeys(1);
         secondNumber.sendKeys(2);
         goButton.click();
