@@ -1,4 +1,4 @@
-# ProtractorExample
+# FirstProtractor
 This project was created by mpanka for practice run end-to-end tests in protractor.
 
 To run them, start run the webdriver from powershell with the command:
